@@ -1,31 +1,29 @@
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
+        int n1=matrix.size();
+        int n2=matrix[0].size();
+        vector<int>v1(n1,-1);
+          vector<int>v2(n2,-1);
         for(int i=0;i<matrix.size();i++)
         {
             for(int j=0;j<matrix[0].size();j++)
             {
                 if(matrix[i][j]==0)
                 {
-                     // cout<<i<<j;
-                    for(int k=0;k<matrix.size();k++){
-                      if(matrix[k][j]!=0){
-                          matrix[k][j]='*';
+                  v1[i]=0;
+                    v2[j]=0;
                     }
-                    }
-                    for(int k=0;k<matrix[0].size();k++){
-                        if(matrix[i][k]!=0){
-                          matrix[i][k]='*';
-                        }
-                 }
-                }
-            }}
                     
-                  for(int i=0;i<matrix.size();i++)
+            }
+        }
+        
+                    
+        for(int i=0;i<matrix.size();i++)
         {
             for(int j=0;j<matrix[0].size();j++)
             {
-               if( matrix[i][j]=='*') 
+               if( v1[i]==0 || v2[j]==0) 
                     matrix[i][j]=0;
                         
                     
