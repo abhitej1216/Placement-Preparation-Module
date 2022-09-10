@@ -11,7 +11,7 @@ public:
     bool hasCycle(ListNode *head) {
         ListNode *slow=head,*fast=head;
         if(head == NULL) return false;
-        while(fast->next!=NULL && fast->next->next!=NULL)
+        while(fast!=NULL && fast->next!=NULL)
         {
             fast=fast->next->next;
             slow=slow->next;
